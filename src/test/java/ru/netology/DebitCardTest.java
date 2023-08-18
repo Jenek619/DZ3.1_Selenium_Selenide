@@ -10,6 +10,11 @@ import org.openqa.selenium.chrome.ChromeOptions;
 public class DebitCardTest {
     private WebDriver driver;
 
+    @BeforeAll
+    public static void setupAll() {
+        WebDriverManager.chromedriver().setup();
+    }
+
     @BeforeEach
     void setUp() {
         ChromeOptions options = new ChromeOptions();
