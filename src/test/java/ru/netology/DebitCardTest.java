@@ -22,6 +22,7 @@ public class DebitCardTest {
         options.addArguments("--no-sandbox");
         options.addArguments("--headless");
         driver = new ChromeDriver(options);
+        driver.get("http://localhost:9999");
     }
 
     @AfterEach
@@ -32,10 +33,9 @@ public class DebitCardTest {
 
 
     @Test
-    public void shouldDebitCardTest() {
-        driver.get("http://localhost:9999");
+    public void shouldDebitCardTest() throws InterruptedException {
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Чистов Евгений");
-        driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+7980000000");
+        driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79012345678");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
         driver.findElement(By.cssSelector("button.button")).click();
         var actualText = driver.findElement(By.cssSelector("[data-test-id=order-success]")).getText().trim();
