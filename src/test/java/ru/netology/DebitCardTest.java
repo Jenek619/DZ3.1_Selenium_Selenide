@@ -33,7 +33,7 @@ public class DebitCardTest {
 
 
     @Test
-    public void shouldDebitCardTest() throws InterruptedException {
+    public void shouldDebitCardTest() {
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Чистов Евгений");
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79012345678");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
